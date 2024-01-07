@@ -56,11 +56,18 @@ const keyPress = e =>{
   typedfield.textContent=typed;
   untypedfield.textContent=untyped;
   
-  //!確認用
+  //!確認用 
   console.log(score);
   //!追加コード スコア表示
-  //!count_type.textContent = score;
+  //count_type.textContent = score;
+  let typedCount = 0;
+  if(e.key === untyped.substring(0,1)) {
+       typedCount++;
+       count_type.textContent = count_type;
+  }
   
+  // ここまで
+
   if(untyped === ""){
     createText();
   }
