@@ -65,7 +65,7 @@ const keyPress = e =>{
        typedCount++;
        count_type.textContent = count_type;
   }
-  
+  // count_type.textContent=0;
   // ここまで
 
   if(untyped === ""){
