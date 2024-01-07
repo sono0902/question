@@ -3,6 +3,7 @@
 let untyped="";
 let typed="";
 let score=0;
+let typedCount = 0;
 
 // 必要なHTML要素の取得
 const untypedfield = document.getElementById("untyped");
@@ -59,16 +60,14 @@ const keyPress = e =>{
   //!確認用 
   console.log(score);
   //!追加コード スコア表示
-  //count_type.textContent = score;
-  let typedCount = 0;
-  if(e.key === untyped.substring(0,1)) {
-       typedCount++;
-       count_type.textContent = count_type;
-  }
-  // count_type.textContent=0;
+  // typedCount++;
+  count_type.textContent = typedCount++;
+  count_type.textContent=0;
   // ここまで
 
   if(untyped === ""){
+    //!追加コード スコア表示 リセットされない
+    typedCount=0;
     createText();
   }
 };
