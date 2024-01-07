@@ -1,9 +1,11 @@
-
+// !スペースをカウントしないためには？
+//!０になる前に終わっている？
 // 変数の初期化
 let untyped="";
 let typed="";
 let score=0;
 let typedCount = 0;
+
 
 // 必要なHTML要素の取得
 const untypedfield = document.getElementById("untyped");
@@ -90,6 +92,13 @@ const rankCheck = score =>{
 const gameOver = id =>{
   // タイマーストップ
   clearInterval(id);
+  //!追加コード　なぜキャンセルを押すと出る
+  setTimeout(() =>{
+  // !文章の途中で終えると表示がおかしくなるのを直したい。「for whiタイムアップ」みたいになる
+  typedfield.textContent="";
+  untypedfield.textContent = 'タイムアップ！';
+  },100);
+   //  !ここまで
   //confirm→ OK」「キャンセル」ボタン付きのダイアログを表示する。
   const result = confirm(rankCheck(score));
   if(result == true){
@@ -106,10 +115,10 @@ const timer =() =>{
     // 残り時間を代入して表示する。
     count.textContent=time;
     if(time <=0){
-        //!追加コード
-      setTimeout(() =>{
-        untypedfield.textContent = 'タイムアップ！';
-       },100);
+        //!追加コード　なぜキャンセルを押すと出る
+      // setTimeout(() =>{
+      //   untypedfield.textContent = 'タイムアップ！';
+      //  },100);
       //  !ここまで
       gameOver(id);
     }
