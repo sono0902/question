@@ -60,13 +60,12 @@ const keyPress = e =>{
   //!確認用 
   console.log(score);
   //!追加コード スコア表示
-  // typedCount++;
-  count_type.textContent = typedCount++;
-  count_type.textContent=0;
+  typedCount++;
+  count_type.textContent = typedCount;
   // ここまで
 
   if(untyped === ""){
-    //!追加コード スコア表示 リセットされない
+    //!追加コード スコア表示
     typedCount=0;
     createText();
   }
